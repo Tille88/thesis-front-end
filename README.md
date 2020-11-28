@@ -68,6 +68,7 @@ node dist/bundle.js
 - [ ] Progression indicator (working all way from intro page)
 - [ ] Form -> Slider
 - [ ]Basic browser-side timer framework (on-load of images, and some events)
+    - [ ] Image full load ensured
 - [ ] Hard-coded progression
 - [ ] Maybe later <strike>Form -> Alpha picker (broad range of backgrounds)) - 2nd step</strike>
 

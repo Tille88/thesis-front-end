@@ -25,22 +25,26 @@ body {
 
 h1 { 
   text-transform: uppercase;
-  // font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 2em;
 }
 
 h2 { 
   font-size: 1.6em;
   margin-top: 1em;
-  // padding-top: 0.5em;
 }
 
 h3 { 
   margin-top: 0.5em;
   font-size: 1.4em;
+  background-image: none;
+  &.active {
+    text-decoration: underline;
+    text-decoration-color: $highlight-aqua;
+    color: $highlight-red;
+  }
 }
 p { 
-  margin-top: 0.5em;
+  margin-bottom: 5em;
 }
 
 // TODO MAKE SURE WORKS WITH SMALL SCREEN
@@ -49,6 +53,11 @@ p {
   // height: calc(40vh);
   // border-bottom: 1px solid #e9decf;
 // }
+
+$rotation: 70deg;
+$base-opacity: 0.3;
+
+
 .sticky {
   position: sticky;
   top: 0;
@@ -57,18 +66,57 @@ p {
   height: 100vh;
   float: left;
   
-  .map {
-    // Center horizontally
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
+  perspective: 1000px;
+
   img {
-    max-width:100%;
-    max-height:100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width:60vw;
+    transform: none;
+    transition: all .5s cubic-bezier(.05,.03,.35,1);
+    transform-style: preserve-3d;
   }
-  
+  & .tilt {
+    transform: rotateX($rotation) translateZ(10px);
+    opacity: $base-opacity;
+    &.legend {
+      opacity: $base-opacity / 3;
+    }
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    &.lift-data {
+      transform: rotateX($rotation) translateZ(20px);
+    }
+    &.lift-legend-headline {
+      transform: rotateX($rotation) translateZ(20px);
+    }
+    &.lift-legend-checkered {
+        transform: rotateX($rotation) translateZ(20px);
+    }
+    &.lift-legend-sampled {
+        transform: rotateX($rotation) translateZ(30px);
+    }
+    &.lift-legend-cluster {
+        transform: rotateX($rotation) translateZ(40px);
+    }
+    &.lift-legend-annotated {
+        transform: rotateX($rotation) translateZ(20px);
+    }
+    &.lift-marker {
+        transform: rotateX(-70deg) translateZ(-99px);
+    }
+
+
+
+  }
+
 }
+
+
+
 
 article {
   margin-top: 0;

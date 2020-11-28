@@ -12,12 +12,48 @@
         
         <main>
             <div class="sticky">
-                <div class="map"> 
-                    <img src="../assets/01-red-annotated-legend-merge.png" alt="">
-                    <div class="range">
-                        <label for="range_weight">TO BE REPLACED: </label> <input type="range" name="num1"  class="slider" min="-15" max="15" value="-10">
-                    </div>
+                <!-- <div class="map">  -->
+                <img 
+                    id="base-layer-img"
+                    class="tiltable" 
+                    src="../assets/640-base-layer.png" alt=""
+                ></img>
+                <img 
+                    id="data-layer-img" 
+                    class="tiltable" 
+                    src="../assets/640-data-layer.png" alt=""
+                ></img>
+                <img 
+                    id="legend-headline" 
+                    class="tiltable legend" 
+                    src="../assets/640-legend-headline.png" alt=""
+                ></img>
+                <img 
+                    id="legend-checkered" 
+                    class="tiltable legend"     
+                    src="../assets/640-legend-checkered.png" alt=""
+                ></img>
+                <img 
+                    class="tiltable legend" 
+                    src="../assets/640-legend-sampled.png" alt=""
+                ></img>
+                <img 
+                    class="tiltable legend" 
+                    src="../assets/640-legend-cluster.png" alt=""
+                ></img>
+                <img 
+                    class="tiltable legend" 
+                    src="../assets/640-legend-annotated.png" alt=""
+                ></img>
+                <img 
+                    class="tiltable" 
+                    src="../assets/640-marker.png" alt=""
+                ></img>
+
+                <div class="range">
+                    <label for="range_weight">TO BE REPLACED: </label> <input type="range" name="num1"  class="slider" min="-15" max="15" value="-10">
                 </div>
+                <!-- </div> -->
             </div>
 
             <article class="aside">
@@ -26,7 +62,7 @@
                 </div>
                 <div class="article-body">
                     <h2 class="highlight-1">Approximate time required 10 minutes</h2>
-                    <h2 class="highlight-2">Instructions</h2>
+                    <h2 >Instructions</h2>
                     <p>
                         This is data gathering for a study evaluating the perception-accuracy of opacity/transparency in the context of static 2D-maps.
                     </p>
@@ -34,10 +70,10 @@
                         You will be be presented with <span class="highlight-2">8 different sample images.</span> In this images you will be asked to report the data-value you believe is represented by the overlay-opacity layer at the location of a <span class="highlight-1">marker</span> 
                     </p>
 
-                    <div id="pivot">
+                    <div id="tilt">
 
 
-                        <h2 class="highlight-2">Elements</h2>
+                        <h2>Elements</h2>
 
                         <div id="basemap">
                             <h3>Base Map</h3>
