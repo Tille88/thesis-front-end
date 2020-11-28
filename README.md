@@ -31,7 +31,7 @@ node dist/bundle.js
 ## First Stage
 
 ### Landing page with scrolly-features
-- [ ] Resources
+- [x] Resources
     - https://ig.ft.com/sites/special-reports/one-belt-one-road/
     - https://pudding.cool/2017/01/making-it-big/
     - https://sonuum.com/
@@ -53,12 +53,16 @@ node dist/bundle.js
     - [x] Base unit setup
     - [x] Placement all elements large screen
 - [ ] Scrolly
-    - [ ] Add in perspective layers
-    - [ ] Fade out other layers based on focus - active marker may need outline highlight
+    - [x] Add in perspective layers
+    - [ ] **ONGOING** Fade out other layers based on focus - active marker may need outline highlight
+        - [ ] Ensure trigger points as expected
+    - [ ] Button design LARGE + regular
 - [ ] Clean up and make it look as for distribution
-    - [ ] Placement all elements small screen
-    - [ ] Working slider https://pudding.cool/2020/10/photo-history/
-    - [ ] Progression slider as expected
+    - [ ] <strike>Placement all elements small screen</strike>
+    - [ ] Change elements for real versions:
+        - [ ] Working slider https://pudding.cool/2020/10/photo-history/
+        - [ ] Progression indicator as expected
+    - [ ] Placement of map working and test browsers+screen sizes
     - [ ] Override scroll on map-div needed?
 
 ### Form for subject data 

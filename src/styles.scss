@@ -56,7 +56,7 @@ p {
 
 $rotation: 70deg;
 $base-opacity: 0.3;
-
+$base-lift: 20px;
 
 .sticky {
   position: sticky;
@@ -86,36 +86,59 @@ $base-opacity: 0.3;
     &.active {
       opacity: 1;
       z-index: 1;
+      &.lift-base {
+        transform: rotateX($rotation) translateZ($base-lift);
+      }
+      &.lift-legend-sampled {
+          transform: rotateX($rotation) translateZ($base-lift*2);
+      }
+      &.lift-legend-cluster {
+        transform: rotateX($rotation) translateZ($base-lift*3);
+      }
+      &.lift-legend-annotated {
+          transform: rotateX($rotation) translateZ($base-lift*2);
+      }
+      &.lift-marker {
+          transform: rotateX(8deg) translateZ(-87px);
+      }
     }
-    &.lift-data {
-      transform: rotateX($rotation) translateZ(20px);
-    }
-    &.lift-legend-headline {
-      transform: rotateX($rotation) translateZ(20px);
-    }
-    &.lift-legend-checkered {
-        transform: rotateX($rotation) translateZ(20px);
-    }
-    &.lift-legend-sampled {
-        transform: rotateX($rotation) translateZ(30px);
-    }
-    &.lift-legend-cluster {
-        transform: rotateX($rotation) translateZ(40px);
-    }
-    &.lift-legend-annotated {
-        transform: rotateX($rotation) translateZ(20px);
-    }
-    &.lift-marker {
-        transform: rotateX(-70deg) translateZ(-99px);
-    }
-
-
 
   }
 
 }
 
+.range {
+  visibility: hidden;
+  &.active {
+    visibility: visible;
+  }
+}
 
+a.button {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  border: 1px solid $highlight-red;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 0.25em 0.75em;
+  // min-width: 180px;
+  // min-height: 1rem;
+  text-align: center;
+  line-height: 1.1;
+  transition: all 0.5s;
+  &:hover{
+    background-color: $highlight-red;
+  }
+  
+}
+#hidden-button {
+  visibility: hidden;
+  &:hover, &.active{
+    background-color: $highlight-red;
+    visibility: visible;
+  }
+}
 
 
 article {
