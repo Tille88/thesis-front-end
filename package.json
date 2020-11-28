@@ -1,0 +1,20 @@
+{
+  "name": "thesis-front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel src/*.html",
+    "build-prod": "parcel build src/*.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.29.0"
+  }
+}
