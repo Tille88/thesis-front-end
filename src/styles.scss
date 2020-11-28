@@ -1,6 +1,97 @@
-$primary-color: white;
-$bg: black;
-h1 {
-  color: $primary-color;
-  background-color: $bg;
+@import "./style/variables.scss";
+@import "./style/reset.scss";
+@import "./style/progress.scss";
+
+
+html {
+  font-size: 16px;
+  font-family: Helvetica,Arial,sans-serif;
+    
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+    
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
 }
+
+body {
+  background: $bg;
+  color: $primary-color;
+  line-height: 1.7;
+}
+
+
+h1 { 
+  text-transform: uppercase;
+  // font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2em;
+}
+
+h2 { 
+  font-size: 1.6em;
+  margin-top: 1em;
+  // padding-top: 0.5em;
+}
+
+h3 { 
+  margin-top: 0.5em;
+  font-size: 1.4em;
+}
+p { 
+  margin-top: 0.5em;
+}
+
+// TODO MAKE SURE WORKS WITH SMALL SCREEN
+// @media screen and (min-width: 900px) {
+  // width: 100%;
+  // height: calc(40vh);
+  // border-bottom: 1px solid #e9decf;
+// }
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 60vw;
+  height: 100vh;
+  float: left;
+  
+  .map {
+    // Center horizontally
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  img {
+    max-width:100%;
+    max-height:100%;
+  }
+  
+}
+
+article {
+  margin-top: 0;
+  margin-left: 60vw;
+  border-left: 1px solid #e9decf;
+  padding: 1rem;
+}
+
+.sticky:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.highlight-1 {
+  color: $highlight-red;
+}
+
+.highlight-2 {
+  text-decoration: underline;
+  text-decoration-color: $highlight-aqua;
+}
+// .module {
+//   font-size: 1.1rem;
+// }
+

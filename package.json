@@ -11,7 +11,9 @@
     "start": "parcel src/*.html",
     "build-prod": "parcel build src/*.html"
   },
-  "dependencies": {},
+  "dependencies": {
+    "scrollmagic": "^2.0.8"
+  },
   "devDependencies": {
     "eslint": "^7.14.0",
     "parcel-bundler": "^1.12.4",

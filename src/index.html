@@ -6,7 +6,96 @@
         <title></title>
     </head>
     <body>
-        <div id="app"></div>
+
+        <!-- <progress value="10" max="100"></progress> -->
+        <div class="progress"> </div>
+        
+        <main>
+            <div class="sticky">
+                <div class="map"> 
+                    <img src="../assets/01-red-annotated-legend-merge.png" alt="">
+                    <div class="range">
+                        <label for="range_weight">TO BE REPLACED: </label> <input type="range" name="num1"  class="slider" min="-15" max="15" value="-10">
+                    </div>
+                </div>
+            </div>
+
+            <article class="aside">
+                <div class="article-head">
+                    <h1>Transparency Data Mapping</h1>
+                </div>
+                <div class="article-body">
+                    <h2 class="highlight-1">Approximate time required 10 minutes</h2>
+                    <h2 class="highlight-2">Instructions</h2>
+                    <p>
+                        This is data gathering for a study evaluating the perception-accuracy of opacity/transparency in the context of static 2D-maps.
+                    </p>
+                    <p>
+                        You will be be presented with <span class="highlight-2">8 different sample images.</span> In this images you will be asked to report the data-value you believe is represented by the overlay-opacity layer at the location of a <span class="highlight-1">marker</span> 
+                    </p>
+
+                    <div id="pivot">
+
+
+                        <h2 class="highlight-2">Elements</h2>
+
+                        <div id="basemap">
+                            <h3>Base Map</h3>
+                            <p>
+                                The base map is similar to a map you use every day online or on Google maps.  
+                            </p>
+                        </div>
+                        
+                        <div id="datalayer">
+                            <h3>Data Layer</h3>
+                            <p>
+                                A data variable is represented using opacity of different colours.
+                            </p>
+                        </div>
+                        
+                        <div id="legends">
+                            <h3>Legends</h3>
+                            <p>
+                                A number of different legend types will be shown - one for each image.
+                            </p>
+                        </div>
+                        
+                        <div id="marker">
+                            <h3>Marker</h3>
+                            <p>
+                                A marker indicates the location for you to guess the value of the data layer.
+                            </p>
+                        </div>
+                        
+                        <div id="slider">
+                            <h3>Input Slider</h3>
+                            <p>
+                                You input your guess using the slider
+                            </p>
+                        </div>
+                        
+                        <h3>Next/Submit</h3>
+                        <p>
+                            And when you are ready, you click through to the next image.
+                        </p>
+                        
+                        <h3>Progress Indicator</h3>
+                        <p>
+                            A progress indicator guides you through the progress.
+                        </p>
+
+                        <h2>Window size</h2>
+                        <p>
+                            It is strongly recommended to use a desktop browser - as the images are static. But if you're on a phone you can try to zoom into the pictures.
+                        </p>
+                    </div>
+
+                    <button>
+                        Start
+                    </button>
+                </div>
+            </article>
+        </main>
         <script src="index.js"></script>
     </body>
 </html>

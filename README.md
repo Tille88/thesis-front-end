@@ -36,32 +36,36 @@ node dist/bundle.js
     - https://pudding.cool/2017/01/making-it-big/
     - https://sonuum.com/
     - https://pudding.cool/process/responsive-scrollytelling/
-- [ ] Setup elements - HTML
-    - [ ] Text scroll through (w/ headlines)
-        - [ ] Appr. time needed
-        - [ ] Describe elements one-by-one
-        - [ ] Progress bar description
-        - [ ] Selection of values (only slider for now)
-        - [ ] Ability to toggle marker
-        - [ ] Start button
-    - [ ] Map div
-    - [ ] Value-picker
-- [ ] Base styling
-    - [ ] Theme - BAM
-    - [ ] CSS reset
-    - [ ] Base unit setup
-    - [ ] Placement all elements large/small screens
+    - https://css-tricks.com/rem-global-em-local/
+- [x] Setup elements - HTML
+    - [x] Text scroll through (w/ headlines)
+        - [x] Appr. time needed
+        - [x] Describe elements one-by-one
+        - [x] Progress bar description
+        - [x] Selection of values (only slider for now)
+        - [x] Ability to toggle marker
+        - [x] Start button
+    - [x] Map div
+    - [x] Value-picker (temp)
+- [x] Base styling
+    - [x] Theme
+    - [x] CSS reset
+    - [x] Base unit setup
+    - [x] Placement all elements large screen
 - [ ] Scrolly
-    - [ ] Override scroll on map-div
-    - [ ] Fade out other layers based on focus
-    - [ ] Fade out other layers based on focus
-- [ ] Warning not ideal size - desktop browser or rotate
+    - [ ] Add in perspective layers
+    - [ ] Fade out other layers based on focus - active marker may need outline highlight
+- [ ] Clean up and make it look as for distribution
+    - [ ] Placement all elements small screen
+    - [ ] Working slider https://pudding.cool/2020/10/photo-history/
+    - [ ] Progression slider as expected
+    - [ ] Override scroll on map-div needed?
 
 ### Form for subject data 
 - [ ] placeholder (only click-through and progression)
 
 ### Progression 
-- [ ] Progression indicator
+- [ ] Progression indicator (working all way from intro page)
 - [ ] Form -> Slider
 - [ ]Basic browser-side timer framework (on-load of images, and some events)
 - [ ] Hard-coded progression
