@@ -26,14 +26,14 @@
     - [x] Placement all elements large screen
 - [ ] Scrolly
     - [x] Add in perspective layers
-    - [ ] **ONGOING** Fade out other layers based on focus - active marker may need outline highlight
-        - [ ] Ensure trigger points as expected
-    - [ ] Button design LARGE + regular
-- [ ] Clean up and make it look as for distribution
+    - [x] **ONGOING** Fade out other layers based on focus - active marker may need outline highlight
+        - [x] Ensure trigger points as expected
+    - [x] Button design LARGE + regular
+- [x] Clean up and make it look as (almost) for distribution
     - [x] <strike>Placement all elements small screen</strike>
-    - [ ] Change elements for real versions:
-        - [ ] Working slider https://pudding.cool/2020/10/photo-history/
-    - [ ] Placement of map working and test browsers+screen sizes
+    - [x] Change elements for real versions:
+        - [x] Placement of map working and test browsers+screen sizes
+        - [x] Working slider https://pudding.cool/2020/10/photo-history/ - Placement + styling + number of ticks
     - [x] Override scroll on map-div needed? = NO
 
 
@@ -41,7 +41,6 @@
 - [ ] **Can't think of any variables of interest** <strike>placeholder (only click-through and progression)</strike>
 
 ### Progression 
-- [ ] Progression indicator (working all way from intro page)
 - [ ] Form -> Slider
 - [ ]Basic browser-side timer framework (on-load of images, and some events)
     - [ ] Image full load ensured
@@ -54,10 +53,12 @@
 
 ### Testing
 - [ ] Testing framework or manual for browsers/sizes and using friends for input
-- [ ] Progression indicator as expected (working)
+- [ ] Progression indicator (working all way from intro page)
+- [ ] Trigger points working as expected -> remove helper lines
 
 ## Second Stage (After back-end setup)
-
+...
+- [ ] Cleanup code (incl. CSS taken from pudding)
 
 ## Building and running on localhost
 

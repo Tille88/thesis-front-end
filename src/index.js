@@ -13,14 +13,12 @@ noUiSlider.create(updateSlider, {
     },
     padding: 0,
     start: 20,
-        // margin: 20,
-    // tooltips: [true],
     tooltips: wNumb({decimals: 1}),
     step: 0.1,
     pips: {
         mode: 'positions',
-        values: [0, 25, 50, 75, 100],
-        density: 3,
+        values: [0, 20, 40, 60, 80, 100],
+        density: 5,
     }
 });
 
