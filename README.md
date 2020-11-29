@@ -38,7 +38,7 @@
 
 
 ### <strike>Form for subject data</strike>
-- [ ] **Can't think of any variables of interest** <strike>placeholder (only click-through and progression)</strike>
+- [x] **Can't think of any variables of interest** <strike>placeholder (only click-through and progression)</strike>
 
 ### Progression 
 - [ ] Form -> Slider

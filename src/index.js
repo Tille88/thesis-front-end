@@ -4,6 +4,14 @@ import wNumb from "wnumb";
 import ScrollMagic from "scrollmagic";
 import addIndicators from "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 
+
+if(window.innerWidth<980){
+    const el = document.querySelector(".size-warning");
+    el.classList.add("warn");
+}
+
+/////////////////////////////////////////////////
+// Slider
 var updateSlider = document.querySelector('.range');
 
 noUiSlider.create(updateSlider, {
@@ -38,7 +46,7 @@ new ScrollMagic.Scene({
     triggerElement: "#tilt",
     duration: "200%"
     }).setClassToggle(".tiltable", "tilt")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Basemap highlight
@@ -47,7 +55,7 @@ new ScrollMagic.Scene({
         duration: 100
     })
     .setClassToggle("#base-layer-img, #basemap>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Datalayer highlight + Lift
@@ -56,7 +64,7 @@ new ScrollMagic.Scene({
         duration: "100%"
     })
     .setClassToggle("#data-layer-img", "lift-base")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -64,7 +72,7 @@ new ScrollMagic.Scene({
         duration: 100
     })
     .setClassToggle("#data-layer-img, #datalayer>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Legends highlight + Lift
@@ -72,42 +80,42 @@ new ScrollMagic.Scene({
     triggerElement: "#legends",
     duration: 100
     }).setClassToggle(".legend, #legends>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 new ScrollMagic.Scene({
     triggerElement: "#legends",
     duration: "100%"
     }).setClassToggle("#legend-headline", "lift-base")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 new ScrollMagic.Scene({
     triggerElement: "#legends",
     duration: "100%"
     }).setClassToggle("#legend-checkered", "lift-base")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
     new ScrollMagic.Scene({
     triggerElement: "#legends",
     duration: "100%"
     }).setClassToggle("#legend-sampled", "lift-legend-sampled")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 new ScrollMagic.Scene({
     triggerElement: "#legends",
     duration: "100%"
     }).setClassToggle("#legend-cluster", "lift-legend-cluster")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 new ScrollMagic.Scene({
     triggerElement: "#legends",
     duration: "100%"
     }).setClassToggle("#legend-annotated", "lift-legend-annotated")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Marker highlight + Lift
@@ -115,20 +123,20 @@ new ScrollMagic.Scene({
     triggerElement: "#marker",
     duration: 100
     }).setClassToggle("#marker-img, #marker>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 new ScrollMagic.Scene({
     triggerElement: "#marker",
     duration: 100
     }).setClassToggle("#marker-img", "lift-marker")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Selection slider
 new ScrollMagic.Scene({
     triggerElement: "#slider",
-    duration: 100
+    duration: 400
     }).setClassToggle(".range, #slider>h3", "active")
     .addIndicators() 
     .addTo(controller);
@@ -146,5 +154,5 @@ new ScrollMagic.Scene({
     triggerElement: "#next",
     duration: 100
     }).setClassToggle(".next, #next>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
