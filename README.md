@@ -1,33 +1,5 @@
 # Thesis Front End
 
-
-## Building and running on localhost
-
-First install dependencies:
-
-```sh
-npm install
-```
-
-To run in hot module reloading mode:
-
-```sh
-npm start
-```
-
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-## Running
-
-```sh
-node dist/bundle.js
-```
-
-
 ## First Stage
 
 ### Landing page with scrolly-features
@@ -58,15 +30,15 @@ node dist/bundle.js
         - [ ] Ensure trigger points as expected
     - [ ] Button design LARGE + regular
 - [ ] Clean up and make it look as for distribution
-    - [ ] <strike>Placement all elements small screen</strike>
+    - [x] <strike>Placement all elements small screen</strike>
     - [ ] Change elements for real versions:
         - [ ] Working slider https://pudding.cool/2020/10/photo-history/
-        - [ ] Progression indicator as expected
     - [ ] Placement of map working and test browsers+screen sizes
-    - [ ] Override scroll on map-div needed?
+    - [x] Override scroll on map-div needed? = NO
 
-### Form for subject data 
-- [ ] placeholder (only click-through and progression)
+
+### <strike>Form for subject data</strike>
+- [ ] **Can't think of any variables of interest** <strike>placeholder (only click-through and progression)</strike>
 
 ### Progression 
 - [ ] Progression indicator (working all way from intro page)
@@ -82,5 +54,35 @@ node dist/bundle.js
 
 ### Testing
 - [ ] Testing framework or manual for browsers/sizes and using friends for input
+- [ ] Progression indicator as expected (working)
 
 ## Second Stage (After back-end setup)
+
+
+## Building and running on localhost
+
+First install dependencies:
+
+```sh
+npm install
+```
+
+To run in hot module reloading mode:
+
+```sh
+npm start
+```
+
+To create a production build:
+
+```sh
+npm run build-prod
+```
+
+## Running
+
+```sh
+node dist/bundle.js
+```
+
+

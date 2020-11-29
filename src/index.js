@@ -1,6 +1,36 @@
 import "./styles.scss";
+import noUiSlider from "nouislider";
+import wNumb from "wnumb";
 import ScrollMagic from "scrollmagic";
-import addIndicators from "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators"
+import addIndicators from "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
+
+var updateSlider = document.querySelector('.range');
+
+noUiSlider.create(updateSlider, {
+    range: {
+        'min': 0,
+        'max': 100
+    },
+    padding: 0,
+    start: 20,
+        // margin: 20,
+    // tooltips: [true],
+    tooltips: wNumb({decimals: 1}),
+    step: 0.1,
+    pips: {
+        mode: 'positions',
+        values: [0, 25, 50, 75, 100],
+        density: 3,
+    }
+});
+
+
+let tooltips = updateSlider.noUiSlider.getTooltips();
+
+updateSlider.noUiSlider.on('update', function (values, handle) {
+    console.log(values);
+});
+
 
 // init controller
 var controller = new ScrollMagic.Controller();
