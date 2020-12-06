@@ -1,6 +1,5 @@
-import "./styles.scss";
-import noUiSlider from "nouislider";
-import wNumb from "wnumb";
+import "./style/page-intro.scss";
+import "./js/slider";
 import ScrollMagic from "scrollmagic";
 import addIndicators from "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 
@@ -12,31 +11,37 @@ if(window.innerWidth<980){
 
 /////////////////////////////////////////////////
 // Slider
+/////////////////////////////////////////////////
 var updateSlider = document.querySelector('.range');
+updateSlider.classList.add("inactive");
 
-noUiSlider.create(updateSlider, {
-    range: {
-        'min': 0,
-        'max': 100
-    },
-    padding: 0,
-    start: 20,
-    tooltips: wNumb({decimals: 1}),
-    step: 0.1,
-    pips: {
-        mode: 'positions',
-        values: [0, 20, 40, 60, 80, 100],
-        density: 5,
-    }
-});
+// noUiSlider.create(updateSlider, {
+//     range: {
+//         'min': 0,
+//         'max': 100
+//     },
+//     padding: 0,
+//     start: 20,
+//     tooltips: wNumb({decimals: 1}),
+//     step: 0.1,
+//     pips: {
+//         mode: 'positions',
+//         values: [0, 20, 40, 60, 80, 100],
+//         density: 5,
+//     }
+// });
 
 
-let tooltips = updateSlider.noUiSlider.getTooltips();
+// let tooltips = updateSlider.noUiSlider.getTooltips();
 
-updateSlider.noUiSlider.on('update', function (values, handle) {
-    console.log(values);
-});
+// updateSlider.noUiSlider.on('update', function (values, handle) {
+//     console.log(values);
+// });
 
+
+/////////////////////////////////////////////////
+// Scroll-events
+/////////////////////////////////////////////////
 
 // init controller
 var controller = new ScrollMagic.Controller();
@@ -138,7 +143,7 @@ new ScrollMagic.Scene({
     triggerElement: "#slider",
     duration: 400
     }).setClassToggle(".range, #slider>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Progress indicator
@@ -146,7 +151,7 @@ new ScrollMagic.Scene({
     triggerElement: "#progress",
     duration: 100
     }).setClassToggle(".progress, #progress>h3", "active")
-    .addIndicators() 
+    // .addIndicators() 
     .addTo(controller);
 
 // Next
@@ -156,3 +161,20 @@ new ScrollMagic.Scene({
     }).setClassToggle(".next, #next>h3", "active")
     // .addIndicators() 
     .addTo(controller);
+
+
+/////////////////////////////////////////////////
+// Next
+/////////////////////////////////////////////////
+const nextButton = document.querySelector("#start-button");
+nextButton.addEventListener("click", function(e){
+    startSession();
+    // redirect
+    window.location.href = "./progression.html";
+});
+
+function startSession(){
+    // TEMP UUID
+    localStorage.setItem('uuid', 'xxx-xxx-xxx');
+    // genereate progression
+}

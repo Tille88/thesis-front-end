@@ -41,6 +41,18 @@
 - [x] **Can't think of any variables of interest** <strike>placeholder (only click-through and progression)</strike>
 
 ### Progression 
+
+Full image load
+Slider + Submit
+Submit inactive until slider change
+Timer - reset and msPassed
+Logger (both console + to backend)
+Navigator info and others...
+Throttle
+On resize end (need to know size of image for events)
+css refactoring core+ other pages
+
+
 - [ ] Form -> Slider
 - [ ]Basic browser-side timer framework (on-load of images, and some events)
     - [ ] Image full load ensured
