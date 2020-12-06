@@ -3,7 +3,36 @@
 @import "./slider.scss";
 
 
+.grid-container{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+
+.map {
+  max-height: 100vh;
+  max-width: 100vw;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  // margin: 0 auto;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+ }
+}
+
 .range-progression {
-    width: 50%
-  }
+  position: relative;
+  width: 90%;
+  top: 50%;
+}
   
+.button.next{
+  height: 10%;
+  width: 90%;
+  &.inactive{
+    color: #343b3a;
+    border: 1px solid #343b3a;
+  }
+}

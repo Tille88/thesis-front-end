@@ -41,23 +41,18 @@
 - [x] **Can't think of any variables of interest** <strike>placeholder (only click-through and progression)</strike>
 
 ### Progression 
-
-Full image load
-Slider + Submit
-Submit inactive until slider change
-Timer - reset and msPassed
-Logger (both console + to backend)
-Navigator info and others...
-Throttle
-On resize end (need to know size of image for events)
-css refactoring core+ other pages
-
-
-- [ ] Form -> Slider
-- [ ]Basic browser-side timer framework (on-load of images, and some events)
-    - [ ] Image full load ensured
-- [ ] Hard-coded progression
-- [ ] Maybe later <strike>Form -> Alpha picker (broad range of backgrounds)) - 2nd step</strike>
+- [x] css refactoring core+ other pages
+- [x] Slider + Submit
+    - [x] Submit inactive until slider change
+- [x] Timer - reset and msPassed
+- [x] Form -> Slider
+- [x]Basic browser-side timer framework (on-load of images, and some events)
+    - [x] Image full load ensured
+- [x] Hard-coded progression -> go through
+- [x] Maybe later <strike>Form -> Alpha picker (broad range of backgrounds)) - 2nd step</strike>
+- [ ] Navigator info and others...
+- [ ] Logger (both console + to backend)
+- [ ] Refactor (intro session+progression, then do user acceptance)
 
 ### User acceptance form of viz types after progression
 - [ ] Smaller pictures of viz types
@@ -70,7 +65,7 @@ css refactoring core+ other pages
 
 ## Second Stage (After back-end setup)
 ...
-- [ ] Cleanup code (incl. CSS taken from pudding)
+- [ ] Placeholder... connect to back-end, get rid of bugs...
 
 ## Building and running on localhost
 

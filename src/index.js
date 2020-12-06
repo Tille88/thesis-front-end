@@ -1,5 +1,5 @@
 import "./style/page-intro.scss";
-import "./js/slider";
+import {CreateSlider} from "./js/slider";
 import ScrollMagic from "scrollmagic";
 import addIndicators from "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 
@@ -14,30 +14,7 @@ if(window.innerWidth<980){
 /////////////////////////////////////////////////
 var updateSlider = document.querySelector('.range');
 updateSlider.classList.add("inactive");
-
-// noUiSlider.create(updateSlider, {
-//     range: {
-//         'min': 0,
-//         'max': 100
-//     },
-//     padding: 0,
-//     start: 20,
-//     tooltips: wNumb({decimals: 1}),
-//     step: 0.1,
-//     pips: {
-//         mode: 'positions',
-//         values: [0, 20, 40, 60, 80, 100],
-//         density: 5,
-//     }
-// });
-
-
-// let tooltips = updateSlider.noUiSlider.getTooltips();
-
-// updateSlider.noUiSlider.on('update', function (values, handle) {
-//     console.log(values);
-// });
-
+CreateSlider();
 
 /////////////////////////////////////////////////
 // Scroll-events
