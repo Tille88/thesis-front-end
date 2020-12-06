@@ -55,8 +55,8 @@
 - [ ] Refactor (intro session+progression, then do user acceptance)
 
 ### User acceptance form of viz types after progression
-- [ ] Smaller pictures of viz types
-- [ ] User input of ratings 
+- [x] Smaller pictures of viz types
+- [x] User input of ratings 
 
 ### Testing
 - [ ] Testing framework or manual for browsers/sizes and using friends for input

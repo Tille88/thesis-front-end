@@ -57,6 +57,6 @@ function loadImage(cb){
     img.onload = function() {
         cb();
     }
-    img.src = cfg.hardCodedProg[progIdx++];
+    img.src = cfg.hardCodedProg[progIdx++] || (window.location.href = "./useraccept.html");
     mapTarget.append(img);
 }
