@@ -6,26 +6,15 @@ import {CreateSlider} from "./slider";
 import {ClientStorage} from "./clientstorage";
 import {cfg} from "./cfg";
 
-let inputChanged = false;
-
-// Slider
-const slider = CreateSlider();
-slider.initListeners();
-slider.elem().addEventListener('change', function(e) { 
-    if(!inputChanged){
-        let nextButton = document.querySelector(".next");
-        nextButton.classList.remove("inactive");
-        nextButton.classList.add("active");
-        inputChanged = true;
-    }
-    console.log("Value change: ", slider.value, " Time: ", timer.now()/1000);
-}, false);
-
-// Button
-document.querySelector(".next").addEventListener("click", onSubmit);
-
 // Timer
 const timer = CreateTimer();
+
+// Slider
+const slider = CreateSlider(timer);
+slider.initListeners();
+
+
+// Load first image or if reloaded old image
 loadImage(ClientStorage().getCurrImg(), function(){
     timer.restart();
 });
@@ -39,18 +28,24 @@ let throttledMouseEvent = throttle(function(e){
 // Map
 document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
 
+
+// Button
+document.querySelector(".next").addEventListener("click", onSubmit);
+
+
+
 function onSubmit(el){
-    if(inputChanged){
+    if(slider.inputChanged()){
+        // TODO: AJAX LOG INFO TO BACKEND (image, timer info), include image dimensions -> THEN!!!
         console.log("Submit at: ", timer.now()/1000);
         el.target.classList.add("inactive");
         el.target.classList.remove("active");
         slider.reset();
         loadImage(null, function(){
             timer.restart();
-            console.log("Image loaded time: ", timer.now()/1000);
         });
     }
-    inputChanged = false;
+    slider.resetInputChanged();
 }
 
 
@@ -64,10 +59,7 @@ function loadImage(startImage = null, cb){
         cb();
     }
     const imgSrc = startImage || ClientStorage().nextImage();
-    console.log(imgSrc);
-    console.log(typeof(imgSrc));
     if(imgSrc){
-        console.log("entered", imgSrc);
         img.src = imgSrc;
     } else{
         window.location.href = "./useraccept.html";

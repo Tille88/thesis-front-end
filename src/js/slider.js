@@ -8,14 +8,12 @@ import {cfg} from "./cfg";
 const SLIDER_MIN = 0;
 const SLIDER_MAX = 100;
 
-export function CreateSlider() {
+export function CreateSlider(timer = null) {
 
     var updateSlider = document.querySelector(cfg.sliderTarget);
-    var moved = 0;
+    let moved = 0;
+    let privInputChanged = false;
     init(updateSlider);
-
-
-    
 
     return {
         value: null,
@@ -34,11 +32,27 @@ export function CreateSlider() {
             }, 100);
 
             updateSlider.noUiSlider.on('update', debouncedUpdate);
+
+            this.elem().addEventListener('change', function(e) { 
+                if(!privInputChanged){
+                    let nextButton = document.querySelector(".next");
+                    nextButton.classList.remove("inactive");
+                    nextButton.classList.add("active");
+                    privInputChanged = true;
+                }
+                console.log("Value change: ", that.value, " Time: ", timer.now()/1000);
+            }, false);
             return this;
         },
         reset: function(){
             updateSlider.noUiSlider.set(randomInt(SLIDER_MIN, SLIDER_MAX));
             moved = 0;
+        },
+        inputChanged: function(){
+            return privInputChanged;
+        },
+        resetInputChanged: function(){
+            privInputChanged = false;
         }
     }
 }
