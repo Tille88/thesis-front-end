@@ -3,11 +3,12 @@ import "../style/page-progression.scss";
 import "./slider";
 import {CreateTimer} from "./timer";
 import {CreateSlider} from "./slider";
+import {ClientStorage} from "./clientstorage";
 import {cfg} from "./cfg";
 
 let inputChanged = false;
-let progIdx = 0;
 
+// Slider
 const slider = CreateSlider();
 slider.initListeners();
 slider.elem().addEventListener('change', function(e) { 
@@ -20,10 +21,12 @@ slider.elem().addEventListener('change', function(e) {
     console.log("Value change: ", slider.value, " Time: ", timer.now()/1000);
 }, false);
 
+// Button
 document.querySelector(".next").addEventListener("click", onSubmit);
 
+// Timer
 const timer = CreateTimer();
-loadImage(function(){
+loadImage(ClientStorage().getCurrImg(), function(){
     timer.restart();
     console.log("Image loaded time-reset: ", timer.now()/1000);
 });
@@ -34,6 +37,7 @@ let throttledMouseEvent = throttle(function(e){
     console.log("Y: ", e.clientY / (e.target.height -e.target.clientTop));    
 }, 1000);
 
+// Map
 document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
 
 function onSubmit(el){
@@ -42,7 +46,7 @@ function onSubmit(el){
         el.target.classList.add("inactive");
         el.target.classList.remove("active");
         slider.reset();
-        loadImage(function(){
+        loadImage(null, function(){
             timer.restart();
             console.log("Image loaded time: ", timer.now()/1000);
         });
@@ -51,7 +55,7 @@ function onSubmit(el){
 }
 
 
-function loadImage(cb){
+function loadImage(startImage = null, cb){
     const mapTarget = document.querySelector(cfg.mapTarget);
     if(mapTarget.childElementCount){
         mapTarget.removeChild(mapTarget.firstChild);
@@ -60,6 +64,6 @@ function loadImage(cb){
     img.onload = function() {
         cb();
     }
-    img.src = cfg.hardCodedProg[progIdx++] || (window.location.href = "./useraccept.html");
+    img.src = startImage || ClientStorage().nextImage() || (window.location.href = "./useraccept.html");
     mapTarget.append(img);
 }

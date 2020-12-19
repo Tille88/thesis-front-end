@@ -2,6 +2,7 @@ import "./style/page-intro.scss";
 import {CreateSlider} from "./js/slider";
 import ScrollMagic from "scrollmagic";
 import addIndicators from "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
+import {ClientStorage} from "./js/clientstorage";
 
 
 if(window.innerWidth<980){
@@ -151,7 +152,8 @@ nextButton.addEventListener("click", function(e){
 });
 
 function startSession(){
-    // TEMP UUID
-    localStorage.setItem('uuid', 'xxx-xxx-xxx');
+    ClientStorage().UUID();
     // genereate progression
+    ClientStorage().initImageProgression();
+    // TODO: AJAX send Navigator-info + UUID + progression to backend
 }
