@@ -19,11 +19,15 @@ export function ClientStorage() {
         nextImage: function nextImage(){
             let imageArrStr = storageLoc.getItem(StorageEnums.imageProg);
             let imageArr = JSON.parse(imageArrStr);
-            let nextImage = imageArr.shift();
-            storageLoc.setItem(StorageEnums.imageProg, JSON.stringify(imageArr));
-            console.log("nextImage: ", nextImage);
-            storageLoc.setItem(StorageEnums.currImg, nextImage);
-            return nextImage ? nextImage : false;
+            let nextExtractedImage;
+            if(imageArr.length){
+                nextExtractedImage = imageArr.shift();
+                storageLoc.setItem(StorageEnums.imageProg, JSON.stringify(imageArr));
+                storageLoc.setItem(StorageEnums.currImg, nextExtractedImage);
+            } else{
+                storageLoc.setItem(StorageEnums.currImg, "")
+            }
+            return nextExtractedImage ? nextExtractedImage : false;
         },
         getCurrImg: function getCurrImg(){
             let extractedCurrImg = storageLoc.getItem(StorageEnums.currImg);

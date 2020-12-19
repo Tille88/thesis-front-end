@@ -28,14 +28,13 @@ document.querySelector(".next").addEventListener("click", onSubmit);
 const timer = CreateTimer();
 loadImage(ClientStorage().getCurrImg(), function(){
     timer.restart();
-    console.log("Image loaded time-reset: ", timer.now()/1000);
 });
 
 let throttledMouseEvent = throttle(function(e){
     console.log("At time: ", timer.now()/1000);
     console.log("X: ", e.clientX / (e.target.width -e.target.clientLeft));
     console.log("Y: ", e.clientY / (e.target.height -e.target.clientTop));    
-}, 1000);
+}, 250);
 
 // Map
 document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
@@ -64,6 +63,14 @@ function loadImage(startImage = null, cb){
     img.onload = function() {
         cb();
     }
-    img.src = startImage || ClientStorage().nextImage() || (window.location.href = "./useraccept.html");
+    const imgSrc = startImage || ClientStorage().nextImage();
+    console.log(imgSrc);
+    console.log(typeof(imgSrc));
+    if(imgSrc){
+        console.log("entered", imgSrc);
+        img.src = imgSrc;
+    } else{
+        window.location.href = "./useraccept.html";
+    }
     mapTarget.append(img);
 }
