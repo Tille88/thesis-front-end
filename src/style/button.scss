@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-a.button, button.button {
+input.button, a.button, button.button {
     text-decoration: none;
     border: none;
     background-color: transparent;
@@ -16,7 +16,7 @@ a.button, button.button {
     text-align: center;
     line-height: 1.1;
     transition: all 0.5s;
-    &:hover{
+    &.active:hover{
       background-color: $highlight-aqua;
       color: #282828;
     }

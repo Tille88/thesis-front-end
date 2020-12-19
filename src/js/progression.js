@@ -12,7 +12,9 @@ const slider = CreateSlider();
 slider.initListeners();
 slider.elem().addEventListener('change', function(e) { 
     if(!inputChanged){
-        document.querySelector(".next").classList.remove("inactive");
+        let nextButton = document.querySelector(".next");
+        nextButton.classList.remove("inactive");
+        nextButton.classList.add("active");
         inputChanged = true;
     }
     console.log("Value change: ", slider.value, " Time: ", timer.now()/1000);
@@ -38,6 +40,7 @@ function onSubmit(el){
     if(inputChanged){
         console.log("Submit at: ", timer.now()/1000);
         el.target.classList.add("inactive");
+        el.target.classList.remove("active");
         slider.reset();
         loadImage(function(){
             timer.restart();

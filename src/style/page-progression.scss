@@ -34,5 +34,10 @@
   &.inactive{
     color: #343b3a;
     border: 1px solid #343b3a;
+    &:hover{
+        color: #343b3a;
+        border: 1px solid #343b3a;
+    }
   }
 }
+    
