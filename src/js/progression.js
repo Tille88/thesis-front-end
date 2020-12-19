@@ -1,52 +1,41 @@
 import {throttle} from "lodash";
 import "../style/page-progression.scss";
 import "./slider";
-import {CreateTimer} from "./timer";
+// import {CreateTimer} from "./timer";
+import {CreateEventKeeper} from "./eventkeeper";
 import {CreateSlider} from "./slider";
 import {ClientStorage} from "./clientstorage";
 import {cfg} from "./cfg";
 
-// Timer
-const timer = CreateTimer();
+////////////////////////////////////////
+// EventKeeper
+////////////////////////////////////////
+const eventKeeper = CreateEventKeeper();
 
+////////////////////////////////////////
 // Slider
-const slider = CreateSlider(timer);
+////////////////////////////////////////
+const slider = CreateSlider(eventKeeper);
 slider.initListeners();
+
+////////////////////////////////////////
+// Map and events
+////////////////////////////////////////
+// Map
+document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
+
+let throttledMouseEvent = throttle(function(e){
+    eventKeeper.logMapHover(
+        e.clientX / (e.target.width -e.target.clientLeft),
+        e.clientY / (e.target.height -e.target.clientTop)
+    );
+}, 250);
 
 
 // Load first image or if reloaded old image
 loadImage(ClientStorage().getCurrImg(), function(){
-    timer.restart();
+    eventKeeper.reset();
 });
-
-let throttledMouseEvent = throttle(function(e){
-    console.log("At time: ", timer.now()/1000);
-    console.log("X: ", e.clientX / (e.target.width -e.target.clientLeft));
-    console.log("Y: ", e.clientY / (e.target.height -e.target.clientTop));    
-}, 250);
-
-// Map
-document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
-
-
-// Button
-document.querySelector(".next").addEventListener("click", onSubmit);
-
-
-
-function onSubmit(el){
-    if(slider.inputChanged()){
-        // TODO: AJAX LOG INFO TO BACKEND (image, timer info), include image dimensions -> THEN!!!
-        console.log("Submit at: ", timer.now()/1000);
-        el.target.classList.add("inactive");
-        el.target.classList.remove("active");
-        slider.reset();
-        loadImage(null, function(){
-            timer.restart();
-        });
-    }
-    slider.resetInputChanged();
-}
 
 
 function loadImage(startImage = null, cb){
@@ -66,3 +55,29 @@ function loadImage(startImage = null, cb){
     }
     mapTarget.append(img);
 }
+
+
+////////////////////////////////////////
+// Submit functionality and logic
+////////////////////////////////////////
+
+// Button
+document.querySelector(".next").addEventListener("click", onSubmit);
+
+function onSubmit(el){
+    if(slider.inputChanged()){
+        eventKeeper.logSubmit();
+        // TODO: AJAX LOG INFO TO BACKEND (image, timer info), include image dimensions -> THEN!!!
+        // TEMP
+        console.log(eventKeeper.asJSON());
+        el.target.classList.add("inactive");
+        el.target.classList.remove("active");
+        slider.reset();
+        loadImage(null, function(){
+            eventKeeper.reset();
+        });
+    }
+    slider.resetInputChanged();
+}
+
+

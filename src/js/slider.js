@@ -8,7 +8,7 @@ import {cfg} from "./cfg";
 const SLIDER_MIN = 0;
 const SLIDER_MAX = 100;
 
-export function CreateSlider(timer = null) {
+export function CreateSlider(eventKeeper = null) {
 
     var updateSlider = document.querySelector(cfg.sliderTarget);
     let moved = 0;
@@ -40,7 +40,8 @@ export function CreateSlider(timer = null) {
                     nextButton.classList.add("active");
                     privInputChanged = true;
                 }
-                console.log("Value change: ", that.value, " Time: ", timer.now()/1000);
+                // console.log("Value change: ", that.value, " Time: ", timer.now()/1000);
+                eventKeeper.logSliderEvent(that.value);
             }, false);
             return this;
         },
