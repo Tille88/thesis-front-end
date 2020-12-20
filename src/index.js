@@ -2,6 +2,7 @@ import "./style/page-intro.scss";
 import {initScrollEvents} from "./js/scrollEvents";
 import {CreateSlider} from "./js/slider";
 import {ClientStorage} from "./js/clientstorage";
+import {cfg} from "./js/cfg";
 
 // Warning if too small screen
 if(window.innerWidth<980){
@@ -28,13 +29,19 @@ initScrollEvents()
 const nextButton = document.querySelector("#start-button");
 nextButton.addEventListener("click", function(e){
     startSession();
-    // redirect
-    window.location.href = "./progression.html";
 });
 
 function startSession(){
-    ClientStorage().UUID();
-    // genereate progression
-    ClientStorage().initImageProgression();
-    // TODO: AJAX send UUID + progression to backend -> THEN REDIRECT
+    // fetch TODO: not arrow-function
+    fetch(
+        `${cfg.fetchBaseURL}${cfg.sessionInitExtension}`,
+        {
+            method: "POST"
+        }).then(r => r.json())
+    .then(json => {
+        ClientStorage().UUID(json.data.data.uuid);
+        // TODO: get image prog
+        ClientStorage().initImageProgression();
+        window.location.href = "./progression.html";
+    });
 }

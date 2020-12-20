@@ -27,6 +27,9 @@ export function CreateEventKeeper() {
         },
         asJSON: function(){
             return JSON.stringify(eventContainer, false, 2);
+        },
+        getEvents: function(){
+            return eventContainer;
         }
     }
 }

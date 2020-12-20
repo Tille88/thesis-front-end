@@ -68,16 +68,31 @@ function onSubmit(el){
     if(slider.inputChanged()){
         eventKeeper.logSubmit();
         // TODO: AJAX LOG INFO TO BACKEND (image, timer info), include image dimensions -> THEN!!!
-        // TEMP
-        console.log(eventKeeper.asJSON());
-        el.target.classList.add("inactive");
-        el.target.classList.remove("active");
-        slider.reset();
-        loadImage(null, function(){
-            eventKeeper.reset();
+        fetch(
+            `${cfg.fetchBaseURL}${cfg.responseExtension}`,
+            {
+                method: "POST",
+                body: JSON.stringify(
+                    Object.assign({ 
+                            uuid: ClientStorage().UUID(), 
+                            mapVersion: ClientStorage().getCurrImg()
+                        }, eventKeeper.getEvents()
+                    )
+                ), 
+                headers: { 
+                    "Content-type": "application/json; charset=UTF-8"
+                } 
+        }).then(_ => {
+            el.target.classList.add("inactive");
+            el.target.classList.remove("active");
+            slider.reset();
+            loadImage(null, function(){
+                eventKeeper.reset();
+            });
+            slider.resetInputChanged();
         });
+
     }
-    slider.resetInputChanged();
 }
 
 

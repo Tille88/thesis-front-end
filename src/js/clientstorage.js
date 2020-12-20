@@ -6,9 +6,9 @@ const imageProgression = cfg.hardCodedProg.slice();
 
 export function ClientStorage() {
     return {
-        UUID: function(){
+        UUID: function(uuid){
             if(!storageLoc.getItem(StorageEnums.UUID)){
-                storageLoc.setItem(StorageEnums.UUID, 'xxx-xxx-xxx');
+                storageLoc.setItem(StorageEnums.UUID, uuid);
             }
             return storageLoc.getItem(StorageEnums.UUID);
         },

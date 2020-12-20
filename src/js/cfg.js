@@ -15,7 +15,10 @@
         img3,
         img4,
         img5,
-        img6,
-        img7
-    ]
+        // img6,
+        // img7
+    ],
+    fetchBaseURL: "http://localhost:3000/api/v1/",
+    sessionInitExtension: "respondent",
+    responseExtension: "response"
 };

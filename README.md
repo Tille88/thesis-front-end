@@ -50,22 +50,26 @@
     - [x] Image full load ensured
 - [x] Hard-coded progression -> go through
 - [x] Maybe later <strike>Form -> Alpha picker (broad range of backgrounds)) - 2nd step</strike>
-- [ ] Navigator info and others...
-- [ ] Logger (both console + to backend)
-- [ ] Refactor (intro session+progression, then do user acceptance)
+- [x] Logger (both console + to backend)
+- [x] Refactor (intro session+progression, then do user acceptance)
 
 ### User acceptance form of viz types after progression
 - [x] Smaller pictures of viz types
 - [x] User input of ratings 
 
 ### Testing
-- [ ] Testing framework or manual for browsers/sizes and using friends for input
-- [ ] Progression indicator (working all way from intro page)
-- [ ] Trigger points working as expected -> remove helper lines
+- [x] Testing framework or manual for browsers/sizes and using friends for input
+- [ ] REMOVE: Progression indicator (working all way from intro page)
 
 ## Second Stage (After back-end setup)
 ...
 - [ ] Placeholder... connect to back-end, get rid of bugs...
+- [ ] AFTER STATISTICAL TESTS: add opacity selection mechanism?
+- [ ] AFTER STATISTICAL TESTS: Individual results page?
+- [ ] AFTER STATISTICAL TESTS: Thank you page?
+- [ ] AFTER STATISTICAL TESTS: New user setup - currently only one session per "localstorage"?
+- [ ] AFTER STATISTICAL TESTS: Weird slider moves up until image loaded bug...
+- [ ] AFTER STATISTICAL TESTS: UUID-gen + randomized progression-gen (front or backend?)...
 
 ## Building and running on localhost
 
