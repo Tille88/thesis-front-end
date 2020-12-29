@@ -2,7 +2,7 @@ import {cfg} from "./cfg";
 import {StorageEnums} from "./enums";
 
 const storageLoc = localStorage;
-const imageProgression = cfg.hardCodedProg.slice();
+const imageProgression = cfg.hardCodedProg.slice().map((ext) => `${cfg.imgBaseUrl}${ext}`);
 
 export function ClientStorage() {
     return {
