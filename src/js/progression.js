@@ -71,15 +71,6 @@ function onSubmit(el){
     if(slider.inputChanged()){
         eventKeeper.logSubmit();
 
-// TBR
-console.log("TO SUBMIT", Object.assign({ 
-    uuid: ClientStorage().UUID(), 
-    mapVersion: ClientStorage().getCurrImg()
-}, eventKeeper.getEvents()
-));
-// TBR END
-
-        // TODO: AJAX LOG INFO TO BACKEND (image, timer info), include image dimensions -> THEN!!!
         fetch(
             `${cfg.fetchBaseURL}${cfg.responseExtension}`,
             {
