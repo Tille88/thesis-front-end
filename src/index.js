@@ -39,9 +39,8 @@ function startSession(){
             method: "POST"
         }).then(r => r.json())
     .then(json => {
-        ClientStorage().UUID(json.data.data.uuid);
-        // TODO: get image prog
-        ClientStorage().initImageProgression();
+        ClientStorage().UUID(json.data.uuid);
+        ClientStorage().initImageProgression(json.data.imageProg);
         window.location.href = "./progression.html";
     });
 }

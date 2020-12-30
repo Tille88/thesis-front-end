@@ -2,7 +2,6 @@ import {cfg} from "./cfg";
 import {StorageEnums} from "./enums";
 
 const storageLoc = localStorage;
-const imageProgression = cfg.hardCodedProg.slice().map((ext) => `${cfg.imgBaseUrl}${ext}`);
 
 export function ClientStorage() {
     return {
@@ -12,8 +11,8 @@ export function ClientStorage() {
             }
             return storageLoc.getItem(StorageEnums.UUID);
         },
-        initImageProgression: function initImageProgression(){
-            storageLoc.setItem(StorageEnums.imageProg, JSON.stringify(imageProgression));
+        initImageProgression: function initImageProgression(imageProg){
+            storageLoc.setItem(StorageEnums.imageProg, JSON.stringify(imageProg));
             return true;
         },
         nextImage: function nextImage(){
