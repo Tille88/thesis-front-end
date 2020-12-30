@@ -106,13 +106,7 @@ export function initScrollEvents(){
         // .addIndicators() 
         .addTo(controller);
 
-    // Progress indicator
-    new ScrollMagic.Scene({
-        triggerElement: "#progress",
-        duration: 100
-        }).setClassToggle(".progress, #progress>h3", "active")
-        // .addIndicators() 
-        .addTo(controller);
+    
 
     // Next
     new ScrollMagic.Scene({
