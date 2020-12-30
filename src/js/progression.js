@@ -22,14 +22,17 @@ slider.initListeners();
 // Map and events
 ////////////////////////////////////////
 // Map
+let throttledMouseEvent = throttle(function(e){
+    if(e.target.width && e.target.height){
+        eventKeeper.logMapHover(
+            e.clientX / (e.target.width -e.target.clientLeft),
+            e.clientY / (e.target.height -e.target.clientTop)
+        );
+    }
+}, 250);
+
 document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
 
-let throttledMouseEvent = throttle(function(e){
-    eventKeeper.logMapHover(
-        e.clientX / (e.target.width -e.target.clientLeft),
-        e.clientY / (e.target.height -e.target.clientTop)
-    );
-}, 250);
 
 
 // Load first image or if reloaded old image
@@ -67,6 +70,15 @@ document.querySelector(".next").addEventListener("click", onSubmit);
 function onSubmit(el){
     if(slider.inputChanged()){
         eventKeeper.logSubmit();
+
+// TBR
+console.log("TO SUBMIT", Object.assign({ 
+    uuid: ClientStorage().UUID(), 
+    mapVersion: ClientStorage().getCurrImg()
+}, eventKeeper.getEvents()
+));
+// TBR END
+
         // TODO: AJAX LOG INFO TO BACKEND (image, timer info), include image dimensions -> THEN!!!
         fetch(
             `${cfg.fetchBaseURL}${cfg.responseExtension}`,
