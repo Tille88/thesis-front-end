@@ -33,6 +33,7 @@ nextButton.addEventListener("click", function(e){
 
 function startSession(){
     // fetch TODO: not arrow-function
+    // TODO: Check if continuing session (having progression+UUID) -> now creating new session
     fetch(
         `${cfg.fetchBaseURL}${cfg.sessionInitExtension}`,
         {

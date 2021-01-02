@@ -6,7 +6,7 @@ const storageLoc = localStorage;
 export function ClientStorage() {
     return {
         UUID: function(uuid){
-            if(!storageLoc.getItem(StorageEnums.UUID)){
+            if(uuid){
                 storageLoc.setItem(StorageEnums.UUID, uuid);
             }
             return storageLoc.getItem(StorageEnums.UUID);
