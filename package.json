@@ -10,7 +10,7 @@
     "clean": "rm dist/*",
     "start": "parcel src/*.html",
     "build-prod": "parcel build src/*.html",
-    "image-server": "http-server ./assets/960x960/ -p 4321"
+    "image-server": "http-server ./assets/not_used/960x960/ -p 4321"
   },
   "dependencies": {
     "lodash": "^4.17.20",
