@@ -18,7 +18,7 @@ img {
 
 .radio {
     margin: 16px 0;
-    // display: block;
+    display: block;
     cursor: pointer;
     input {
         display: none;
@@ -26,7 +26,7 @@ img {
             line-height: $radioSize;
             height: $radioSize;
             padding-left: $radioSize;
-            // display: block;
+            display: block;
             position: relative;
             &:not(:empty) {
                 padding-left: $radioSize + 8;
@@ -36,7 +36,7 @@ img {
                 content: '';
                 width: $radioSize;
                 height: $radioSize;
-                // display: block;
+                display: block;
                 border-radius: 50%;
                 left: 0;
                 top: 0;
@@ -80,4 +80,13 @@ img {
             }
         }
     }
+}
+
+.button{
+    width: 150px;
+    height: 50px;
+}
+
+form{
+    padding-bottom: 50px;
 }

@@ -4,5 +4,6 @@
     mapTarget: ".map",
     fetchBaseURL: "http://localhost:3000/api/v1/",
     sessionInitExtension: "respondent",
-    responseExtension: "response"
+    responseExtension: "response",
+    accExt: "acceptance"
 };
