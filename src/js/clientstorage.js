@@ -15,6 +15,9 @@ export function ClientStorage() {
             storageLoc.setItem(StorageEnums.imageProg, JSON.stringify(imageProg));
             return true;
         },
+        getImageProgression: function getImageProgression(){
+            return JSON.parse(storageLoc.getItem(StorageEnums.imageProg));
+        },
         nextImage: function nextImage(){
             let imageArrStr = storageLoc.getItem(StorageEnums.imageProg);
             let imageArr = JSON.parse(imageArrStr);

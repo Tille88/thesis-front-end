@@ -64,8 +64,15 @@ function loadImage(startImage = null, cb){
 // Submit functionality and logic
 ////////////////////////////////////////
 
+function setButtonProgress(button){
+    button.innerHTML = `Submit ${NUM_IMAGES -ClientStorage().getImageProgression().length}/${NUM_IMAGES}`;
+}
+
 // Button
-document.querySelector(".next").addEventListener("click", onSubmit);
+const NUM_IMAGES = 10;
+const buttonEl = document.querySelector(".next");
+setButtonProgress(buttonEl);
+buttonEl.addEventListener("click", onSubmit);
 
 function onSubmit(el){
     if(slider.inputChanged()){
@@ -93,6 +100,7 @@ function onSubmit(el){
                 eventKeeper.reset();
             });
             slider.resetInputChanged();
+            setButtonProgress(buttonEl);
         });
 
     }
