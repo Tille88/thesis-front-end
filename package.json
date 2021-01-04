@@ -13,6 +13,7 @@
     "image-server": "http-server ./assets/not_used/960x960/ -p 4321"
   },
   "dependencies": {
+    "canvas-confetti": "^1.3.2",
     "lodash": "^4.17.20",
     "nouislider": "^14.6.3",
     "scrollmagic": "^2.0.8",
