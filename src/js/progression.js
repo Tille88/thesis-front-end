@@ -29,7 +29,7 @@ let throttledMouseEvent = throttle(function(e){
             e.clientY / (e.target.height -e.target.clientTop)
         );
     }
-}, 250);
+}, 200);
 
 document.querySelector(".map").addEventListener("mousemove", throttledMouseEvent);
 
