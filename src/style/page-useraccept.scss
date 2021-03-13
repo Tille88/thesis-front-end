@@ -11,6 +11,11 @@ img {
   max-width: 50%;
 }
 
+.form{
+    margin-left: 3rem;
+    display: inline-block;
+}
+
 .center {
   margin: 0 auto;
   width: 80%;
@@ -89,4 +94,8 @@ img {
 
 form{
     padding-bottom: 50px;
+}
+
+.highlight {
+    color: $highlight-orange;
 }
